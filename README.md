@@ -32,8 +32,6 @@ jupyter notebook src/Ensemble_Inference.ipynb
 
 ## Documentation
 - `INSTALL.md` - Complete installation guide
-- `document.md` - Detailed code analysis and technical documentation
-- `models/README.md` - Training procedures
 
 ## Requirements
 - Python 3.7-3.10

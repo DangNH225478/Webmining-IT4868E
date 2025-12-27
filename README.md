@@ -3,7 +3,7 @@
 
 ## Overview
 This project implements a curriculum recommendation system using machine learning techniques including:
-- Transformer models (BERT, XLM-RoBERTa, MiniLM)
+- Transformer models (BERT, XLM-RoBERTa)
 - TF-IDF similarity matching
 - LightGBM ensemble models
 - Neural network embeddings

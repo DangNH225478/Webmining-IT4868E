@@ -14,18 +14,10 @@ This guide provides detailed instructions to setup and run the Learning Equality
 ---
 
 ## System Requirements
-
-### Hardware
-- **Efficiency Track (Recommended)**:
-  - RAM: 16GB minimum
-  - Storage: 10GB free space
-  - GPU: Not required (CPU only)
-
-- **Main Track (High Performance)**:
-  - RAM: 32GB minimum
-  - Storage: 20GB free space
-  - GPU: NVIDIA GPU with 16GB+ VRAM (for ensemble models)
-  - CUDA: 11.0 or higher
+- RAM: 32GB minimum
+- Storage: 20GB free space
+- GPU: NVIDIA GPU with 16GB+ VRAM (for ensemble models)
+- CUDA: 11.0 or higher
 
 ### Software
 - Python: 3.7 - 3.10
@@ -43,7 +35,6 @@ After setup, your project should have this structure:
 Web-Mining-Learning-Equality---Curriculum-Recommendations/
 ├── README.md
 ├── INSTALL.md
-├── document.md
 │
 ├── data/                                    # Competition data (you need to download)
 │   ├── learning-equality-curriculum-recommendations/
@@ -302,21 +293,6 @@ pip install -r requirements.txt
 mkdir -p output
 ```
 
-### Efficiency Track (Fast, No GPU Required)
-
-#### Option 1: TF-IDF Only (Fastest - ~1 minute)
-
-```bash
-jupyter notebook src/TFIDF_Inference.ipynb
-```
-
-- Uses only TF-IDF matching
-- F2-Score: ~0.530
-- Memory: ~4GB
-- Time: <1 minute
-
-### Main Track (Best Performance, GPU Required)
-
 ```bash
 jupyter notebook src/Ensemble_Inference.ipynb
 ```
@@ -347,33 +323,21 @@ jupyter notebook models/RoBERTa-Large/Notebooks/RoBERTa-Large-Finetune.ipynb
 
 ## Troubleshooting
 
-### Issue 1: ModuleNotFoundError: No module named 'sparse_dot_topn'
-
-**Solution:**
-```bash
-pip install sparse-dot-topn
-```
-
-If installation fails, try:
-```bash
-pip install sparse-dot-topn --no-binary sparse-dot-topn
-```
-
-### Issue 2: CUDA out of memory
+### Issue 1: CUDA out of memory
 
 **Solution:**
 - Reduce batch size in notebooks (change `BS = 64` to `BS = 32` or lower)
 - Use CPU instead of GPU (change `.cuda()` to `.cpu()`)
 - Use efficiency track notebooks instead
 
-### Issue 3: File not found errors
+### Issue 2: File not found errors
 
 **Solution:**
 - Verify all paths are relative and match the structure above
 - Check that data files are in correct locations
 - Ensure you're running notebooks from project root or using correct relative paths
 
-### Issue 4: Transformer model download issues
+### Issue 3: Transformer model download issues
 
 **Solution:**
 ```bash
